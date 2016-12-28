@@ -4,7 +4,7 @@ var min = 0, max = 2;
 var CurrentColor, box1, box2, box3, box4, box5, box6, box7, box8, box9, score, scoreInt, scoreT;
 
 (function () {
-	VK.Widgets.Comments('vk_comments', {limit: 10, width: '627', attach: '*'});
+	VK.Widgets.Comments('vk_comments', {limit: 10, width: '627', attach: '*', pageUrl: "https://vk.com/app5697095"});
 })();
 
 function Start () {
@@ -114,10 +114,11 @@ function Start () {
 	}
 
 function ScoreCheck () {
+	
 	if (CurrentColor.style.backgroundColor == box1.style.backgroundColor)
-	{
+		{
 			scoreInt +=1;
 			scoreT = document.createTextNode('Score: '+ scoreInt);
 			console.log(scoreInt);
-	}
+	}	
 }
