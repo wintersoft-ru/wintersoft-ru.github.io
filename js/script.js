@@ -3,12 +3,11 @@ var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, gr
 var min = 0, max = 2;
 var CurrentColor, box1, box2, box3, box4, box5, box6, box7, box8, box9, score, scoreInt, scoreT;
 
-function getRandomInRange() {
-  return Math.floor(Math.random() * (0 - 2 + 1));
-}
+(function () {
+	VK.Widgets.Comments('vk_comments', {limit: 10, width: '627', attach: '*'});
+})();
 
 function Start () {
-
 	CurrentColor = document.createElement('div');
 	CurrentColor.id = 'CurrentColorBox';
 	CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
