@@ -1,14 +1,15 @@
 var document = document;
+var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, green];
+var min = 0, max = 2;
+var CurrentColor, box1, box2, box3, box4, box5, box6, box7, box8, box9, score, scoreInt, scoreT;
 
 function getRandomInRange() {
   return Math.floor(Math.random() * (0 - 2 + 1));
 }
 
 function Start () {
-	var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, green];
-	
-	var min = 0, max = 2;
-	var CurrentColor = document.createElement('div');
+
+	CurrentColor = document.createElement('div');
 	CurrentColor.id = 'CurrentColorBox';
 	CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	var table2 = document.createElement('table');
@@ -39,56 +40,65 @@ function Start () {
 	var td8 = document.createElement('td');
 	var td9 = document.createElement('td');
 
-	var box1 = document.createElement('div');
+	box1 = document.createElement('div');
 	box1.id ="GameBox";
+	box1.setAttribute('onclick', 'ScoreCheck()');
 	box1.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td1.appendChild(box1);
 	tr1.appendChild(td1);
 	table.appendChild(tr1);
-	var box2 = document.createElement('div');
+	box2 = document.createElement('div');
 	box2.id ="GameBox";
+	box2.setAttribute('onclick', 'ScoreCheck()');
 	box2.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td2.appendChild(box2);
 	tr1.appendChild(td2);
 	table.appendChild(tr1);
-	var box3 = document.createElement('div');
+	box3 = document.createElement('div');
 	box3.id ="GameBox";
+	box3.setAttribute('onclick', 'ScoreCheck()');
 	box3.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td3.appendChild(box3);
 	tr1.appendChild(td3);
 	table.appendChild(tr1);
-	var box4 = document.createElement('div');
+	box4 = document.createElement('div');
 	box4.id ="GameBox";
+	box4.setAttribute('onclick', 'ScoreCheck()');
 	box4.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td4.appendChild(box4);
 	tr2.appendChild(td4);
 	table.appendChild(tr2);
-	var box5 = document.createElement('div');
+	box5 = document.createElement('div');
 	box5.id ="GameBox";
+	box5.setAttribute('onclick', 'ScoreCheck()');
 	box5.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td5.appendChild(box5);
 	tr2.appendChild(td5);
 	table.appendChild(tr2);	
-	var box6 = document.createElement('div');
-	box6.id ="GameBox"
+	box6 = document.createElement('div');
+	box6.id ="GameBox";
+	box6.setAttribute('onclick', 'ScoreCheck()');
 	box6.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td6.appendChild(box6);
 	tr2.appendChild(td6);
 	table.appendChild(tr2);
-	var box7 = document.createElement('div');
-	box7.id ="GameBox"
+	box7 = document.createElement('div');
+	box7.id ="GameBox";
+	box7.setAttribute('onclick', 'ScoreCheck()');
 	box7.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td7.appendChild(box7);
 	tr3.appendChild(td7);
 	table.appendChild(tr3);
-	var box8 = document.createElement('div');
-	box8.id ="GameBox"
+	box8 = document.createElement('div');
+	box8.id ="GameBox";
+	box8.setAttribute('onclick', 'ScoreCheck()');
 	box8.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td8.appendChild(box8);
 	tr3.appendChild(td8);
 	table.appendChild(tr3);
-	var box9 = document.createElement('div');
-	box9.id ="GameBox"
+	box9 = document.createElement('div');
+	box9.id ="GameBox";
+	box9.setAttribute('onclick', 'ScoreCheck()');
 	box9.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	td9.appendChild(box9);
 	tr3.appendChild(td9);
@@ -96,13 +106,19 @@ function Start () {
 	destination.appendChild(table);
 	destination.removeChild(startB);
 	destination.appendChild(table2);
+
+	score = document.createElement('h1'); scoreInt = 0, scoreT = document.createTextNode('Score: '+ scoreInt);
+	score.id = 'dest';
+	score.appendChild(scoreT);
+	destination.insertBefore(score, table);
+
 	}
 
-function get_random_color () {
-	var letters = '0123456789ABCDEF'.split('');
-    var color = "#";
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.round(Math.random() * 15)];
-    }
-    return color;
+function ScoreCheck () {
+	if (CurrentColor.style.backgroundColor == box1.style.backgroundColor)
+	{
+			scoreInt +=1;
+			scoreT = document.createTextNode('Score: '+ scoreInt);
+			console.log(scoreInt);
+	}
 }
