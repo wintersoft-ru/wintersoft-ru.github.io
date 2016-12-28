@@ -39,8 +39,8 @@ body.footer{
 
 #GameBox {
 	text-align: center;
-	width: 100px;
-	height: 100px;
+	width: 75px;
+	height: 75px;
 	background-color: white;
 	margin: 5px;
 	padding: 5px;
@@ -62,8 +62,8 @@ body {
 
 #CurrentColorBox {
 	text-align: center;
-	width: 100px;
-	height: 100px;
+	width: 75px;
+	height: 75px;
 	background-color: white;
 	margin: 5px;
 	padding: 5px;
