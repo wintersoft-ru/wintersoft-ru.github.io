@@ -5,8 +5,12 @@ function getRandomInRange() {
 }
 
 function Start () {
+	var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, green];
+	
+	var min = 0, max = 2;
 	var CurrentColor = document.createElement('div');
 	CurrentColor.id = 'CurrentColorBox';
+	CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
 	var table2 = document.createElement('table');
 	table2.id = 'CurrentTable';
 	var tr_2 = document.createElement('tr');
@@ -15,11 +19,9 @@ function Start () {
 	tr_2.appendChild(td_2);
 	table2.appendChild(tr_2);
 
-	var min = 0, max = 2;
+	
 	var startB = document.getElementById('StartB');
 	var destination = document.getElementById("Area");
-	var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, green];
-	console.log(color);
 	var table = document.createElement('table');
 	table.id = 'tableGame';
 	table.setAttribute('align', 'center');
