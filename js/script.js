@@ -1,11 +1,17 @@
-var document = document;
+var doc = document;
 var red = '#FF0000', blue = '#0000FF', green = '#00FF00', color = [red, blue, green];
 var min = 0, max = 2;
 var CurrentColor, box1, box2, box3, box4, box5, box6, box7, box8, box9, score, scoreInt, scoreT;
 
 (function () {
-	VK.Widgets.Comments('vk_comments', {limit: 10, width: '627', attach: '*', pageUrl: "https://vk.com/app5697095"});
-})();
+
+	var Timer = function () {
+		//alert('Timer 1 sec');
+	}
+	setTimeout(Timer, 1000);
+
+}
+)();
 
 function Start () {
 	CurrentColor = document.createElement('div');
@@ -110,15 +116,98 @@ function Start () {
 	score.id = 'dest';
 	score.appendChild(scoreT);
 	destination.insertBefore(score, table);
+}
 
-	}
+function ScoreUp ()
+{
+	scoreInt +=1;
+			score.removeChild(scoreT);
+			scoreT = document.createTextNode('Score: '+ scoreInt);
+			score.appendChild(scoreT);
+			console.log(scoreInt);
+}
 
 function ScoreCheck () {
-	
-	if (CurrentColor.style.backgroundColor == box1.style.backgroundColor)
-		{
-			scoreInt +=1;
-			scoreT = document.createTextNode('Score: '+ scoreInt);
-			console.log(scoreInt);
-	}	
+
+	if(box1.onclick)  
+	{
+		if (box1.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box1.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box2.onclick)  
+	{
+		if (box2.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box2.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box3.onclick)  
+	{
+		if (box3.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box3.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box4.onclick)  
+	{
+		if (box4.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box4.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box5.onclick)  
+	{
+		if (box5.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box5.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box6.onclick)  
+	{
+		if (box6.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box6.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box7.onclick)  
+	{
+		if (box7.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box7.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box8.onclick)  
+	{
+		if (box8.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box8.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
+	if(box9.onclick)  
+	{
+		if (box9.style.backgroundColor == CurrentColor.style.backgroundColor)
+			{
+			box9.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			CurrentColor.style.backgroundColor = color[Math.round(Math.random() * (max - min))];
+			ScoreUp();
+			}	
+	}
 }
